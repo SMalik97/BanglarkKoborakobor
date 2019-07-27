@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".news_sera"
+    android:background="#e7e3ef">
+
+    <ScrollView
+        android:id="@+id/scroller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/loading_news_sera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/newsImage1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/news1" />
+
+                        <TextView
+                            android:id="@+id/newsTitle1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-60dp"
+                            android:background="@color/text_background"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="News Title Will Shown Here"
+                            android:textColor="#ffffff"
+                            android:textSize="24dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card2"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <ImageView
+                                android:id="@+id/newsImage2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/news5" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/newsTitle2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Title will shown here\nNews Title will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="19sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/newsSubtitle2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Subtitle will shown here\nNews Subtitle will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/date1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right|bottom"
+                                    android:paddingRight="10dp"
+                                    android:text="July 17,2019" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card3"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <ImageView
+                                android:id="@+id/newsImage3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/news4" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/newsTitle3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Title will shown here\nNews Title will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="19sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/newsSubtitle3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/date2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right|bottom"
+                                    android:paddingRight="10dp"
+                                    android:text="July 17,2019" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card4"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <ImageView
+                                android:id="@+id/newsImage4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/news5" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/newsTitle4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Title will shown here\nNews Title will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="19sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/newsSubtitle4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/date3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right|bottom"
+                                    android:paddingRight="10dp"
+                                    android:text="July 17,2019" />/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+            <!--...................          পুলিশ                     -->
+
+            <LinearLayout
+                android:id="@+id/loading_news_police"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/news_category_background"
+                    android:gravity="center"
+                    android:text="পুলিশ"
+                    android:textColor="#ffffff"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card5"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/newsImage5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/news1" />
+
+                        <TextView
+                            android:id="@+id/newsTitle5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-60dp"
+                            android:background="@color/text_background"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="News Title Will Shown Here"
+                            android:textColor="#ffffff"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card6"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <ImageView
+                                android:id="@+id/newsImage6"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/news5" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/newsTitle6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Title will shown here\nNews Title will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="19sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/newsSubtitle6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Subtitle will shown here\nNews Subtitle will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/date4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right|bottom"
+                                    android:paddingRight="10dp"
+                                    android:text="July 17,2019" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card7"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <ImageView
+                                android:id="@+id/newsImage7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/news4" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/newsTitle7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Title will shown here\nNews Title will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="19sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/newsSubtitle7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/date5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right|bottom"
+                                    android:paddingRight="10dp"
+                                    android:text="July 17,2019" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card8"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <ImageView
+                                android:id="@+id/newsImage8"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/news5" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/newsTitle8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Title will shown here\nNews Title will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="19sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/newsSubtitle8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/date6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right|bottom"
+                                    android:paddingRight="10dp"
+                                    android:text="July 17,2019" />/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!--...................          প্রশাসন                     -->
+
+<LinearLayout
+    android:id="@+id/loading_news_prosason"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+            <TextView
+                android:id="@+id/prosason"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/news_category_background"
+                android:gravity="center"
+                android:text="প্রশাসন"
+                android:textColor="#ffffff"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card9"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/newsImage9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/news1" />
+
+                    <TextView
+                        android:id="@+id/newsTitle9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="-60dp"
+                        android:background="@color/text_background"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="News Title Will Shown Here"
+                        android:textColor="#ffffff"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card10"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp">
+
+                        <ImageView
+                            android:id="@+id/newsImage10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/news5" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/newsTitle10"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Title will shown here\nNews Title will shown here"
+                                android:textColor="#000000"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/newsSubtitle10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Subtitle will shown here\nNews Subtitle will shown here"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/date7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right|bottom"
+                                android:paddingRight="10dp"
+                                android:text="July 17,2019" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card11"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp">
+
+                        <ImageView
+                            android:id="@+id/newsImage11"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/news4" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/newsTitle11"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Title will shown here\nNews Title will shown here"
+                                android:textColor="#000000"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/newsSubtitle11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/date8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right|bottom"
+                                android:paddingRight="10dp"
+                                android:text="July 17,2019" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card12"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp">
+
+                        <ImageView
+                            android:id="@+id/newsImage12"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/news5" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/newsTitle12"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Title will shown here\nNews Title will shown here"
+                                android:textColor="#000000"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/newsSubtitle12"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/date9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right|bottom"
+                                android:paddingRight="10dp"
+                                android:text="July 17,2019" />/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+</LinearLayout>
+
+
+            <!--..................    রাজনীতি               .........-->
+
+<LinearLayout
+    android:id="@+id/loading_news_rajnity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/news_category_background"
+                android:gravity="center"
+                android:text="রাজনীতি"
+                android:textColor="#ffffff"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card13"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/newsImage13"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/news1" />
+
+                    <TextView
+                        android:id="@+id/newsTitle13"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="-60dp"
+                        android:background="@color/text_background"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="News Title Will Shown Here"
+                        android:textColor="#ffffff"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card14"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp">
+
+                        <ImageView
+                            android:id="@+id/newsImage14"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/news5" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/newsTitle14"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Title will shown here\nNews Title will shown here"
+                                android:textColor="#000000"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/newsSubtitle14"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Subtitle will shown here\nNews Subtitle will shown here"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/date10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right|bottom"
+                                android:paddingRight="10dp"
+                                android:text="July 17,2019" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card15"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp">
+
+                        <ImageView
+                            android:id="@+id/newsImage15"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/news4" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/newsTitle15"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Title will shown here\nNews Title will shown here"
+                                android:textColor="#000000"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/newsSubtitle15"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/date11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right|bottom"
+                                android:paddingRight="10dp"
+                                android:text="July 17,2019" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card16"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp">
+
+                        <ImageView
+                            android:id="@+id/newsImage16"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/news5" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/newsTitle16"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Title will shown here\nNews Title will shown here"
+                                android:textColor="#000000"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/newsSubtitle16"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"
+                                android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/date12"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right|bottom"
+                                android:paddingRight="10dp"
+                                android:text="July 17,2019" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+</LinearLayout>
+
+
+
+
+            <!--..................   লোকসভা                .........-->
+
+            <LinearLayout
+                android:id="@+id/loading_news_loksova"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/news_category_background"
+                    android:gravity="center"
+                    android:text="লোকসভা"
+                    android:textColor="#ffffff"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card17"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/newsImage17"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/news1" />
+
+                        <TextView
+                            android:id="@+id/newsTitle17"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-60dp"
+                            android:background="@color/text_background"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="News Title Will Shown Here"
+                            android:textColor="#ffffff"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card18"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <ImageView
+                                android:id="@+id/newsImage18"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/news5" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/newsTitle18"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Title will shown here\nNews Title will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="19sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/newsSubtitle18"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Subtitle will shown here\nNews Subtitle will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/date13"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right|bottom"
+                                    android:paddingRight="10dp"
+                                    android:text="July 17,2019" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card19"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <ImageView
+                                android:id="@+id/newsImage19"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/news4" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/newsTitle19"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Title will shown here\nNews Title will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="19sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/newsSubtitle19"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/date19"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right|bottom"
+                                    android:paddingRight="10dp"
+                                    android:text="July 17,2019" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card20"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <ImageView
+                                android:id="@+id/newsImage20"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/news5" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/newsTitle20"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Title will shown here\nNews Title will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="19sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/newsSubtitle20"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp"
+                                    android:text="News Subtitle will shown here\nNews Subtitle will shown here\nNews Subtitle will shown here"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/date20"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right|bottom"
+                                    android:paddingRight="10dp"
+                                    android:text="July 17,2019" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <steelkiwi.com.library.DotsLoaderView
+        android:id="@+id/dotload"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:dlv_item_drawable="@drawable/dot"
+        app:dlv_line_color="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

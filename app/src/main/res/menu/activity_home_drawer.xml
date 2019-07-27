@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_sera"
+            android:title="সেরা"/>
+        <item
+            android:id="@+id/nav_police"
+            android:title="পুলিশ" />
+        <item
+            android:id="@+id/nav_prosason"
+            android:title="প্রশাসন"/>
+
+        <item
+            android:id="@+id/nav_rajnity"
+            android:title="রাজনীতি" />
+        <item
+            android:id="@+id/nav_biggapon"
+            android:title="বিজ্ঞাপন" />
+        <item
+            android:id="@+id/nav_kriya"
+            android:title="ক্রীড়া সংস্কৃতি" />
+        <item
+            android:id="@+id/nav_sahitya"
+            android:title="সাহিত্য বার্তা" />
+        <item
+            android:id="@+id/nav_loksova"
+            android:title="লোকসভা নির্বাচন" />
+
+        <item
+            android:id="@+id/nav_video"
+            android:title="ভিডিও" />
+    </group>
+
+    <item android:title="Our Blogs">
+        <menu>
+            <item
+                android:id="@+id/nav_send33"
+                android:title="KSPC" />
+            <item
+                android:id="@+id/nav_share12"
+                android:title="Mongalkote" />
+
+            <item
+                android:id="@+id/nav_share22"
+                android:title="Banglar Khoborakhobor" />
+
+        </menu>
+    </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share1"
+                android:title="Facebook" />
+
+            <item
+                android:id="@+id/nav_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:title="About us" />
+        </menu>
+    </item>
+
+</menu>
