@@ -22,6 +22,7 @@
             android:layout_height="200dp">
 
             <LinearLayout
+                android:id="@+id/n1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">

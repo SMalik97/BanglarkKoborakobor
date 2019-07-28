@@ -62,7 +62,7 @@
                     android:background="#1830ce"/>
 
                 <TextView
-                    android:id="@+id/date2"
+                    android:id="@+id/ndate3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right|bottom"

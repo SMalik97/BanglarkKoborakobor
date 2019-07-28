@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -30,6 +29,9 @@ import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
 import java.io.StringReader;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -55,6 +57,7 @@ public class news_police extends Fragment {
     DotsLoaderView loader;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    String d;
 
 
     public news_police() {
@@ -80,6 +83,9 @@ public class news_police extends Fragment {
         first10news f10n=new first10news();
         new Thread(f10n).start();
 
+        Date c= Calendar.getInstance().getTime();
+        SimpleDateFormat df=new SimpleDateFormat("dd-MMM-yyyy");
+        d=df.format(c);
 
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView);
         layoutManager=new LinearLayoutManager(getContext());
@@ -87,11 +93,13 @@ public class news_police extends Fragment {
 
 
 
+
+
         return view;
     }
 
 
-    //Load news of Sera category ..........................................................................
+    //Load news of 15 news ..........................................................................
     class first10news implements Runnable{
         @Override
         public void run() {
@@ -128,6 +136,17 @@ public class news_police extends Fragment {
                         Glide.with(getContext()).load(postImage[0]).crossFade().into(newsImage1);
                         newsTitle1.setText(postTitle[0]);
                         card1.setVisibility(View.VISIBLE);
+
+                        card1.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",postId[0]+"");
+                                i.putExtra("cat","police");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
 
                         DataAdapter adpt=new DataAdapter(postTitle,postSubtitle,postImage);
                         recyclerView.setAdapter(adpt);
@@ -177,18 +196,20 @@ public class news_police extends Fragment {
         }
 
         @Override
-        public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.news_list, viewGroup, false);
             
             return new ViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, final int i) {
+        public void onBindViewHolder(ViewHolder viewHolder, final int i) {
 
             viewHolder.ntitle.setText(postTitle[i+1]);
             viewHolder.nstitle.setText(postSubtitle[i+1]);
             Glide.with(viewHolder.nimg.getContext()).load(postImage[i+1]).crossFade().into(viewHolder.nimg);
+            viewHolder.ndate3.setText(d);
+
 
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -212,7 +233,7 @@ public class news_police extends Fragment {
         }//return size of array
 
         public class ViewHolder extends RecyclerView.ViewHolder{
-            private TextView ntitle,nstitle;
+            private TextView ntitle,nstitle,ndate3;
             private ImageView nimg;
             public ViewHolder(View view) {
                 super(view);
@@ -220,30 +241,11 @@ public class news_police extends Fragment {
                 ntitle = (TextView)view.findViewById(R.id.newsTitle3);
                 nstitle = (TextView)view.findViewById(R.id.newsSubtitle3);
                 nimg=(ImageView)view.findViewById(R.id.newsImage3);
+                ndate3=(TextView)view.findViewById(R.id.ndate3);
             }
         }
 
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
