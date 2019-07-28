@@ -46,7 +46,7 @@ import steelkiwi.com.library.DotsLoaderView;
 
 public class news_sera extends Fragment {
 ScrollView scroller;
-LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading_news_rajnity,loading_news_loksova;
+LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading_news_rajnity,loading_news_loksova,loading_news_onno;
     List<Object> list;
     Gson gson;
     Map<String, Object> mapPost;
@@ -66,12 +66,15 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
     String url3 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=65&per_page=4";
     String url4 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=63&per_page=4";
     String url5 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=69&per_page=4";
+    String url6 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=67&per_page=5";
     DotsLoaderView loader;
     TextView prosason;
     int trying=0,trying2=0,trying3=0,trying4=0;
     String d;
-    TextView date1,date2,date3,date4,date5,date6,date7,date8,date9,date10,date11,date12,date13,date19,date20;
-
+    TextView date1,date2,date3,date4,date5,date6,date7,date8,date9,date10,date11,date12,date13,date19,date20,onnodate1,onnodate2,onnodate3,onnodate4,onnodate5;
+    LinearLayout anno1,anno2,anno3,anno4,anno5;
+    TextView onnotitle1,onnotitle2,onnotitle3,onnotitle4,onnotitle5;
+    ImageView onnoimg1,onnoimg2,onnoimg3,onnoimg4,onnoimg5;
     public news_sera() {
         // Required empty public constructor
     }
@@ -97,6 +100,17 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
         loading_news_loksova=(LinearLayout)view.findViewById(R.id.loading_news_loksova);
         loading_news_loksova.setVisibility(View.INVISIBLE);
 
+        loading_news_onno=(LinearLayout)view.findViewById(R.id.loading_news_anno);
+        loading_news_onno.setVisibility(View.INVISIBLE);
+
+        anno1=(LinearLayout)view.findViewById(R.id.anno1);
+        anno2=(LinearLayout)view.findViewById(R.id.anno2);
+        anno3=(LinearLayout)view.findViewById(R.id.anno3);
+        anno4=(LinearLayout)view.findViewById(R.id.anno4);
+        anno5=(LinearLayout)view.findViewById(R.id.anno5);
+
+
+
         date1=(TextView)view.findViewById(R.id.date1);
         date2=(TextView)view.findViewById(R.id.date2);
         date3=(TextView)view.findViewById(R.id.date3);
@@ -112,6 +126,12 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
         date13=(TextView)view.findViewById(R.id.date13);
         date19=(TextView)view.findViewById(R.id.date19);
         date20=(TextView)view.findViewById(R.id.date20);
+        onnodate1=(TextView)view.findViewById(R.id.onnodate1);
+        onnodate2=(TextView)view.findViewById(R.id.onnodate2);
+        onnodate3=(TextView)view.findViewById(R.id.onnodate3);
+        onnodate4=(TextView)view.findViewById(R.id.onnodate4);
+        onnodate5=(TextView)view.findViewById(R.id.onnodate5);
+
 
 
         Date c= Calendar.getInstance().getTime();
@@ -119,7 +139,7 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
         d=df.format(c);
         date1.setText(d);date2.setText(d);date3.setText(d);date4.setText(d);date5.setText(d);date6.setText(d);date7.setText(d);date8.setText(d);
         date9.setText(d);date10.setText(d);date11.setText(d);date12.setText(d);date13.setText(d);date19.setText(d);date20.setText(d);
-
+        onnodate1.setText(d);onnodate2.setText(d);onnodate3.setText(d);onnodate4.setText(d);onnodate5.setText(d);
 
         newsImage1=(ImageView)view.findViewById(R.id.newsImage1);
         newsImage2=(ImageView)view.findViewById(R.id.newsImage2);
@@ -201,6 +221,21 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
         newsSubtitle18=(TextView)view.findViewById(R.id.newsSubtitle18);
         newsSubtitle19=(TextView)view.findViewById(R.id.newsSubtitle19);
         newsSubtitle20=(TextView)view.findViewById(R.id.newsSubtitle20);
+
+
+
+        //onno..........................................................
+        onnotitle1=(TextView)view.findViewById(R.id.onnotitle1);
+        onnotitle2=(TextView)view.findViewById(R.id. onnotitle2);
+        onnotitle3=(TextView)view.findViewById(R.id.onnotitle3);
+        onnotitle4=(TextView)view.findViewById(R.id.onnotitle4);
+        onnotitle5=(TextView)view.findViewById(R.id.onnotitle5);
+
+        onnoimg1=(ImageView)view.findViewById(R.id.onnoimg1);
+        onnoimg2=(ImageView)view.findViewById(R.id.onnoimg2);
+        onnoimg3=(ImageView)view.findViewById(R.id.onnoimg3);
+        onnoimg4=(ImageView)view.findViewById(R.id.onnoimg4);
+        onnoimg5=(ImageView)view.findViewById(R.id.onnoimg5);
 
 
         //start loading news.....................................
@@ -909,6 +944,17 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                         });
 
 
+                        new Timer().schedule(new TimerTask() {
+                            @Override
+                            public void run() {
+                                loadannoNews lnr = new loadannoNews();
+                                new Thread(lnr).start();
+                            }
+                        },1000);
+
+
+
+
                     }catch (Exception e){
                         //Toast.makeText(getContext(), "Json parsing error", Toast.LENGTH_SHORT).show();
                         run();
@@ -939,4 +985,142 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
     }
 
 
-  }
+    class loadannoNews implements Runnable{
+        @Override
+        public void run() {
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, url6, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        gson = new Gson();
+                        JsonReader reader = new JsonReader(new StringReader(url4));
+                        reader.setLenient(true);
+                        list = (List) gson.fromJson(response, List.class);
+                        postTitle = new String[list.size()];
+                        postSubtitle = new String[list.size()];
+                        for (int i = 0; i < list.size(); i++) {
+                            JsonReader reader2 = new JsonReader(new StringReader(url4));
+                            reader2.setLenient(true);
+                            mapPost = (Map<String, Object>) list.get(i);
+                            int id = ((Double) mapPost.get("id")).intValue();
+                            postId[i] = id;
+                            mapTitle = (Map<String, Object>) mapPost.get("title");
+                            postTitle[i] = (String) mapTitle.get("rendered");
+
+                            mapImage = (String) mapPost.get("jetpack_featured_media_url");
+                            if (mapImage.equals("")) {
+                                postImage[i] = "https://i1.wp.com/mongalkote.com/wp-content/uploads/2018/12/IMG-20181224-WA0015.jpg?resize=768%2C294&ssl=1";
+                            } else {
+                                postImage[i] = mapImage;
+                            }
+                        }
+
+                        final String id21=String.valueOf(postId[0]);
+                        final String id22=String.valueOf(postId[1]);
+                        final String id23=String.valueOf(postId[2]);
+                        final String id24=String.valueOf(postId[3]);
+                        final String id25=String.valueOf(postId[4]);
+
+                        Glide.with(getContext()).load(postImage[0]).crossFade().into(onnoimg1);
+                        Glide.with(getContext()).load(postImage[1]).crossFade().into(onnoimg2);
+                        Glide.with(getContext()).load(postImage[2]).crossFade().into(onnoimg3);
+                        Glide.with(getContext()).load(postImage[3]).crossFade().into(onnoimg4);
+                        Glide.with(getContext()).load(postImage[4]).crossFade().into(onnoimg5);
+
+                        onnotitle1.setText(postTitle[0]);
+                        onnotitle2.setText(postTitle[1]);
+                        onnotitle3.setText(postTitle[2]);
+                        onnotitle4.setText(postTitle[3]);
+                        onnotitle5.setText(postTitle[4]);
+
+
+                        loading_news_onno.setVisibility(View.VISIBLE);
+
+                        anno1.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id21);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+                        anno2.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id22);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+                        anno3.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id23);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+                        anno4.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id24);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+                        anno5.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id25);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+
+                    }catch (Exception e){
+                        //Toast.makeText(getContext(), "Json parsing error", Toast.LENGTH_SHORT).show();
+                        run();
+                    }
+
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    if (trying4!=4){
+                        Toast.makeText(getContext(), "Slow network connection!", Toast.LENGTH_SHORT).show();
+                        run();
+                        trying4=trying4+1;
+                    }else {
+                        Toast.makeText(getContext(), "Slow network connection, Please refresh the page!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+            try {
+                RequestQueue rQueue = Volley.newRequestQueue(getContext());
+                rQueue.add(stringRequest);
+            }catch (Exception e){
+
+            }
+        }
+        }
+    }
+
+
+

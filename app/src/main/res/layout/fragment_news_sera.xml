@@ -1392,6 +1392,235 @@
 
 
 
+        <LinearLayout
+            android:id="@+id/loading_news_anno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/news_category_background"
+                android:gravity="center"
+                android:text="অন্যান্য"
+                android:textColor="#ffffff"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:id="@+id/anno1"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="horizontal"
+                android:elevation="5dp"
+                android:background="#ced3ef"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:id="@+id/onnoimg1"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/banglarkhabara_icon"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/onnotitle1"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="3dp"
+                        android:text="News Title shown here"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="#1830bd"/>
+                    <TextView
+                        android:id="@+id/onnodate1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Subrata"
+                        android:gravity="right"
+                        android:paddingRight="5dp"
+                        android:textColor="#ce10ce"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/anno2"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="horizontal"
+                android:elevation="5dp"
+                android:background="#ced3ef"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:id="@+id/onnoimg2"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/banglarkhabara_icon"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/onnotitle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="3dp"
+                        android:text="News Title shown here"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="#1830bd"/>
+                    <TextView
+                        android:id="@+id/onnodate2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Subrata"
+                        android:gravity="right"
+                        android:paddingRight="5dp"
+                        android:textColor="#ce10ce"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/anno3"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="horizontal"
+                android:elevation="5dp"
+                android:background="#ced3ef"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:id="@+id/onnoimg3"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/banglarkhabara_icon"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/onnotitle3"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="3dp"
+                        android:text="News Title shown here"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="#1830bd"/>
+                    <TextView
+                        android:id="@+id/onnodate3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Subrata"
+                        android:gravity="right"
+                        android:paddingRight="5dp"
+                        android:textColor="#ce10ce"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/anno4"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="horizontal"
+                android:elevation="5dp"
+                android:background="#ced3ef"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:id="@+id/onnoimg4"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/banglarkhabara_icon"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"/>
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/onnotitle4"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="3dp"
+                        android:text="News Title shown here"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="#1830bd"/>
+                    <TextView
+                        android:id="@+id/onnodate4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Subrata"
+                        android:gravity="right"
+                        android:paddingRight="5dp"
+                        android:textColor="#ce10ce"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/anno5"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="horizontal"
+                android:elevation="5dp"
+                android:background="#ced3ef"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:id="@+id/onnoimg5"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/banglarkhabara_icon"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/onnotitle5"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="3dp"
+                        android:text="News Title shown here"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="#1830bd"/>
+                    <TextView
+                        android:id="@+id/onnodate5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Subrata"
+                        android:gravity="right"
+                        android:paddingRight="5dp"
+                        android:textColor="#ce10ce"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>
