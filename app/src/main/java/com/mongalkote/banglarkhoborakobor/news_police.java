@@ -49,7 +49,7 @@ public class news_police extends Fragment {
     String mapImage;
     String postImage[]=new String[20];
     int postId[]=new int[20];
-    String url1="https://www.mongalkote.com/wp-json/wp/v2/posts?categories=63&per_page=15";
+    String url1="https://www.mongalkote.com/wp-json/wp/v2/posts?categories=64&per_page=15";
     int trying=0;
     CardView card1;
     ImageView newsImage1;

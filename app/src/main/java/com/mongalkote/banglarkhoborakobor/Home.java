@@ -100,6 +100,48 @@ public class Home extends AppCompatActivity
                     transaction2.replace(R.id.frameLayout, fragment2);
                     transaction2.commit();
                     break;
+                case "prosason":
+                    Fragment fragment3 = new news_prosason();
+                    FragmentManager manager3 = getSupportFragmentManager();
+                    FragmentTransaction transaction3 = manager3.beginTransaction();
+                    transaction3.replace(R.id.frameLayout, fragment3);
+                    transaction3.commit();
+                    break;
+                case "rajnity":
+                    Fragment fragment4 = new news_rajnity();
+                    FragmentManager manager4 = getSupportFragmentManager();
+                    FragmentTransaction transaction4 = manager4.beginTransaction();
+                    transaction4.replace(R.id.frameLayout, fragment4);
+                    transaction4.commit();
+                    break;
+                case "biggapon":
+                    Fragment fragment5 = new news_biggapon();
+                    FragmentManager manager5 = getSupportFragmentManager();
+                    FragmentTransaction transaction5 = manager5.beginTransaction();
+                    transaction5.replace(R.id.frameLayout, fragment5);
+                    transaction5.commit();
+                    break;
+                case "kriya":
+                    Fragment fragment6 = new news_kriya();
+                    FragmentManager manager6 = getSupportFragmentManager();
+                    FragmentTransaction transaction6 = manager6.beginTransaction();
+                    transaction6.replace(R.id.frameLayout, fragment6);
+                    transaction6.commit();
+                    break;
+                case "sahitya":
+                    Fragment fragment7 = new news_sahitya();
+                    FragmentManager manager7 = getSupportFragmentManager();
+                    FragmentTransaction transaction7 = manager7.beginTransaction();
+                    transaction7.replace(R.id.frameLayout, fragment7);
+                    transaction7.commit();
+                    break;
+                case "loksova":
+                    Fragment fragment8 = new news_loksova();
+                    FragmentManager manager8 = getSupportFragmentManager();
+                    FragmentTransaction transaction8 = manager8.beginTransaction();
+                    transaction8.replace(R.id.frameLayout, fragment8);
+                    transaction8.commit();
+                    break;
             }
             Toast.makeText(getApplicationContext(), "Refreshing...", Toast.LENGTH_SHORT).show();
             return true;
@@ -131,17 +173,53 @@ public class Home extends AppCompatActivity
 
             saveFile("police");
         } else if (id == R.id.nav_prosason) {
+            Fragment fragment = new news_prosason();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frameLayout, fragment);
+            transaction.commit();
 
+            saveFile("prosason");
         } else if (id == R.id.nav_rajnity) {
+            Fragment fragment = new news_rajnity();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frameLayout, fragment);
+            transaction.commit();
 
+            saveFile("rajnity");
         } else if (id == R.id.nav_biggapon) {
+            Fragment fragment = new news_biggapon();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frameLayout, fragment);
+            transaction.commit();
 
+            saveFile("biggapon");
         }else if (id == R.id.nav_kriya) {
+            Fragment fragment = new news_kriya();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frameLayout, fragment);
+            transaction.commit();
 
+            saveFile("kriya");
         }else if (id == R.id.nav_sahitya) {
+            Fragment fragment = new news_sahitya();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frameLayout, fragment);
+            transaction.commit();
 
+            saveFile("sahitya");
         }else if (id == R.id.nav_loksova) {
+            Fragment fragment = new news_loksova();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frameLayout, fragment);
+            transaction.commit();
 
+            saveFile("loksova");
         }else if (id == R.id.nav_video) {
 
         }

@@ -386,6 +386,9 @@ public class Post extends AppCompatActivity {
                 case "onno":
                     rurl = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=64&per_page=4";
                     break;
+                case "kriya":
+                    rurl = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=65&per_page=4";
+                    break;
             }
 
 
