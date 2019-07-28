@@ -184,11 +184,24 @@ public class news_police extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
+        public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, final int i) {
 
             viewHolder.ntitle.setText(postTitle[i+1]);
             viewHolder.nstitle.setText(postSubtitle[i+1]);
             Glide.with(viewHolder.nimg.getContext()).load(postImage[i+1]).crossFade().into(viewHolder.nimg);
+
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int j=i+1;
+                    Intent i=new Intent(getContext(),Post.class);
+                    i.putExtra("id",postId[j]+"");
+                    i.putExtra("cat","police");
+                    startActivity(i);
+                    getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                }
+            });
+
         }
 
 
