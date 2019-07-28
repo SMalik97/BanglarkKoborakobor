@@ -122,6 +122,6 @@ TextView textView;
                 finish();
             }
         });
-        builder.show();
+        builder.create().show();
     }
 }
