@@ -842,7 +842,7 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
         }
 
 
-    //Load news of Rajnity category ..................................................................................
+    //Load news of loksova category ..................................................................................
     class loadNewsloksova implements Runnable {
         @Override
         public void run() {
