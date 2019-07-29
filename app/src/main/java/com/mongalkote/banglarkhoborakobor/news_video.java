@@ -186,7 +186,7 @@ public class news_video extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder viewHolder, final int i) {
 
-            viewHolder.ntitle.setText(postTitle[1]);
+            viewHolder.ntitle.setText(postTitle[i]);
             //viewHolder.nstitle.setText(postSubtitle[i+1]);
             Glide.with(viewHolder.nimg.getContext()).load(postImage[i]).crossFade().into(viewHolder.nimg);
             //viewHolder.ndate3.setText(d);

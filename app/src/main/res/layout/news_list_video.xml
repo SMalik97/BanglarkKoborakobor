@@ -1,7 +1,10 @@
 <androidx.cardview.widget.CardView android:id="@+id/card1"
     android:layout_width="match_parent"
     android:layout_height="260dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="8dp"
+    app:cardElevation="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <LinearLayout
             android:id="@+id/n1"
@@ -15,21 +18,33 @@
                 android:layout_height="200dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/news1" />
-
-            <TextView
-                android:id="@+id/newsTitle3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/text_background"
-                android:gravity="center"
-                android:maxLines="2"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="News Title Will Shown Here   \nNews Title Will Shown Here   "
-                android:textColor="#ffffff"
-                android:textSize="24dp"
-                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_play_circle"
+                android:scaleType="fitXY"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-120dp"/>
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/newsTitle3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/text_background"
+            android:gravity="center"
+            android:maxLines="2"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="News Title Will Shown Here   \nNews Title Will Shown Here   "
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="202dp"/>
+    </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 
