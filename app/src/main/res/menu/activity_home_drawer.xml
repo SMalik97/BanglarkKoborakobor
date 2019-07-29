@@ -38,14 +38,14 @@
     <item android:title="Our Blogs">
         <menu>
             <item
-                android:id="@+id/nav_send33"
+                android:id="@+id/nav_kspc"
                 android:title="KSPC" />
             <item
-                android:id="@+id/nav_share12"
+                android:id="@+id/nav_mongalkote"
                 android:title="Mongalkote" />
 
             <item
-                android:id="@+id/nav_share22"
+                android:id="@+id/nav_bk"
                 android:title="Banglar Khoborakhobor" />
 
         </menu>

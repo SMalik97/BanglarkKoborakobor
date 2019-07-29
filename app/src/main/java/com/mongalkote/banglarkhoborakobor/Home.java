@@ -1,7 +1,10 @@
 package com.mongalkote.banglarkhoborakobor;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -9,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
@@ -142,6 +146,13 @@ public class Home extends AppCompatActivity
                     transaction8.replace(R.id.frameLayout, fragment8);
                     transaction8.commit();
                     break;
+                case "video":
+                    Fragment fragment9 = new news_loksova();
+                    FragmentManager manager9 = getSupportFragmentManager();
+                    FragmentTransaction transaction9 = manager9.beginTransaction();
+                    transaction9.replace(R.id.frameLayout, fragment9);
+                    transaction9.commit();
+                    break;
             }
             Toast.makeText(getApplicationContext(), "Refreshing...", Toast.LENGTH_SHORT).show();
             return true;
@@ -221,8 +232,30 @@ public class Home extends AppCompatActivity
 
             saveFile("loksova");
         }else if (id == R.id.nav_video) {
+            Fragment fragment = new news_video();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frameLayout, fragment);
+            transaction.commit();
 
+            saveFile("video");
+        }else if (id == R.id.nav_kspc) {
+            String u="https://katwapresscorner.blogspot.com";
+            openInCustomTab(u);
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+        }else if (id == R.id.nav_mongalkote) {
+            String u="https://katwapresscorner.blogspot.com";
+            openInCustomTab(u);
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+        }else if (id == R.id.nav_bk) {
+            String u="https://banglarkhoborakhobor.blogspot.com";
+            openInCustomTab(u);
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
         }
+
+
+
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -239,4 +272,33 @@ public class Home extends AppCompatActivity
         editor.putString("name",pname);
         editor.apply();
     }
+
+    //chrome custom tab
+    private void openInCustomTab(String url){
+        Uri websiteUri;
+        if (!url.contains("https://")&&!url.contains("http://")){
+            websiteUri=Uri.parse("http://"+url);
+        }else {
+            websiteUri=Uri.parse(url);
+        }
+        CustomTabsIntent.Builder customtabintent=new CustomTabsIntent.Builder();
+        customtabintent.setToolbarColor(Color.parseColor("#3f51b5"));
+        customtabintent.setShowTitle(true);
+        if (chromeInstalled()){
+            customtabintent.build().intent.setPackage("com.android.chrome").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        }
+        customtabintent.build().launchUrl(getApplicationContext(),websiteUri);
+    }
+
+
+    private boolean chromeInstalled(){
+        try{
+            getPackageManager().getPackageInfo("com.android.chrome",0);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }
