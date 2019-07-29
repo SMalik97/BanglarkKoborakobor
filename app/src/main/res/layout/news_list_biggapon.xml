@@ -34,7 +34,7 @@
                 android:maxLines="2"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:text="News Title Will Shown Here"
+                android:text="News Title Will Shown Here   "
                 android:textColor="#ffffff"
                 android:textSize="24dp"
                 android:textStyle="bold" />
