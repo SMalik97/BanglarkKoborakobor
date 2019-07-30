@@ -148,7 +148,7 @@ public class Home extends AppCompatActivity
                     transaction8.commit();
                     break;
                 case "video":
-                    Fragment fragment9 = new news_loksova();
+                    Fragment fragment9 = new news_video();
                     FragmentManager manager9 = getSupportFragmentManager();
                     FragmentTransaction transaction9 = manager9.beginTransaction();
                     transaction9.replace(R.id.frameLayout, fragment9);

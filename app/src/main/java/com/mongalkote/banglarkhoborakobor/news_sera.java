@@ -31,6 +31,7 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.io.StringReader;
 import java.text.SimpleDateFormat;
@@ -67,7 +68,7 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
     String url4 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=63&per_page=4";
     String url5 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=69&per_page=4";
     String url6 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=67&per_page=5";
-    DotsLoaderView loader;
+    AVLoadingIndicatorView loader;
     TextView prosason;
     int trying=0,trying2=0,trying3=0,trying4=0;
     String d;
@@ -239,7 +240,7 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
 
 
         //start loading news.....................................
-        loader = (DotsLoaderView)view.findViewById(R.id.dotload);
+        loader = (AVLoadingIndicatorView) view.findViewById(R.id.dotload);
         loader.show();
 
         loadNewsSera lns=new loadNewsSera();

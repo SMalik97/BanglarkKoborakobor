@@ -1626,13 +1626,12 @@
     </ScrollView>
 
 
-    <steelkiwi.com.library.DotsLoaderView
+    <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/dotload"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible"
-        app:dlv_item_drawable="@drawable/dot"
-        app:dlv_line_color="@android:color/holo_blue_dark"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:indicatorName="BallPulseIndicator"
+        app:indicatorColor="@android:color/holo_red_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

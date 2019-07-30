@@ -25,6 +25,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.io.StringReader;
 import java.text.SimpleDateFormat;
@@ -55,7 +56,7 @@ public class news_prosason extends Fragment {
     CardView card1;
     ImageView newsImage1;
     TextView newsTitle1;
-    DotsLoaderView loader;
+    AVLoadingIndicatorView loader;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     String d;
@@ -76,7 +77,7 @@ public class news_prosason extends Fragment {
         newsTitle1=(TextView)view.findViewById(R.id.newsTitle1);
 
         //start loading news.....................................
-        loader = (DotsLoaderView)view.findViewById(R.id.dotload);
+        loader = (AVLoadingIndicatorView)view.findViewById(R.id.dotload);
         loader.show();
 //load first 15 news
         first10news f10n=new first10news();
