@@ -27,6 +27,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.gson.Gson;
 
 import java.io.StringReader;
@@ -190,6 +191,7 @@ public class news_video extends Fragment {
             //viewHolder.nstitle.setText(postSubtitle[i+1]);
             Glide.with(viewHolder.nimg.getContext()).load(postImage[i]).crossFade().into(viewHolder.nimg);
             //viewHolder.ndate3.setText(d);
+
 
 
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {

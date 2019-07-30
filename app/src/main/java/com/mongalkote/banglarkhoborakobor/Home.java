@@ -12,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -251,6 +252,19 @@ public class Home extends AppCompatActivity
             String u="https://banglarkhoborakhobor.blogspot.com";
             openInCustomTab(u);
             overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+        }else if (id == R.id.nav_share) {
+            String u="https://banglarkhoborakhobor.blogspot.com";
+            openInCustomTab(u);
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+        }else if (id == R.id.nav_about) {
+            AlertDialog.Builder alert=new AlertDialog.Builder(Home.this);
+            alert.setTitle("");
+            alert.setIcon(R.drawable.information);
+            alert.setMessage("বাংলার খবরাখবর"+"\n"+"version: 3.1"+"\n\n"+"mongalkote.com is a news portal where we give importance to bengali news from every corner"+"\n\n"+"Contact us: "+"mongalkote.news@gmail.com");
+            alert.setPositiveButton("OK",null);
+            // Showing Alert Message
+            alert.show();
+            return true;
         }
 
 

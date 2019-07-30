@@ -61,7 +61,7 @@
                 android:id="@+id/nav_share"
                 android:title="Share" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_about"
                 android:title="About us" />
         </menu>
     </item>
