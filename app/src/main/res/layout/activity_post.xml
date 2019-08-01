@@ -34,71 +34,64 @@
                 android:textColor="@android:color/black"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                />
 
             <WebView
                 android:id="@+id/pic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/show_news" />
+                 />
 
             <WebView
                 android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="2dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pic" />
+                />
 
             <LinearLayout
                 android:id="@+id/share1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="2dp"
                 android:gravity="left"
                 android:orientation="horizontal">
 
-                <ImageView
+                <Button
                     android:id="@+id/wa"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/whatsapp"/>
+                    android:background="@drawable/whatsapp" />
 
-                <ImageView
+                <Button
                     android:id="@+id/fb"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/fb" />
+                    android:background="@drawable/fb"/>
 
-                <ImageView
+                <Button
                     android:id="@+id/tw"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/twitter" />
+                    android:background="@drawable/twitter" />
 
-                <ImageView
+                <Button
                     android:id="@+id/g"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/google" />
+                    android:background="@drawable/google"/>
 
-                <ImageView
+                <Button
                     android:id="@+id/sh"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginRight="10dp"
-                    android:src="?attr/actionModeShareDrawable" />
+                    android:background="?attr/actionModeShareDrawable"/>
             </LinearLayout>
             <HorizontalScrollView
                 android:id="@+id/sc1"
