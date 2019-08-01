@@ -261,7 +261,7 @@ public class Home extends AppCompatActivity
             AlertDialog.Builder alert=new AlertDialog.Builder(Home.this);
             alert.setTitle("");
             alert.setIcon(R.drawable.information);
-            alert.setMessage("বাংলার খবরাখবর"+"\n"+"version: 3.1"+"\n\n"+"mongalkote.com is a news portal where we give importance to bengali news from every corner"+"\n\n"+"Contact us: "+"mongalkote.news@gmail.com");
+            alert.setMessage("বাংলার খবরাখবর"+"\n"+"version: 4.1"+"\n\n"+"mongalkote.com is a news portal where we give importance to bengali news from every corner"+"\n\n"+"Contact us: "+"mongalkote.news@gmail.com");
             alert.setPositiveButton("OK",null);
             // Showing Alert Message
             alert.show();
