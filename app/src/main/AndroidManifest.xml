@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".blogs"></activity>
         <activity android:name=".Post" />
         <activity
             android:name=".Home"
