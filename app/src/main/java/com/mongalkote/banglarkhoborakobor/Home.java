@@ -253,9 +253,10 @@ public class Home extends AppCompatActivity
             openInCustomTab(u);
             overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
         }else if (id == R.id.nav_share) {
-            String u="https://banglarkhoborakhobor.blogspot.com";
-            openInCustomTab(u);
-            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+            Intent p=new Intent(Intent.ACTION_SEND);
+            p.setType("text/plain");
+            p.putExtra(Intent.EXTRA_TEXT,"Download the best news app Banglar Khoborakhobor and get daily news update. Download the app now from here "+"https://play.google.com/store/apps/details?id=com.mongalkote.banglarkhoborakobor");
+            startActivity(p);
         }else if (id == R.id.nav_about) {
             AlertDialog.Builder alert=new AlertDialog.Builder(Home.this);
             alert.setTitle("");
