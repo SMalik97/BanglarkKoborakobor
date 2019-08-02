@@ -96,6 +96,8 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
         sb1=(Button)view.findViewById(R.id.sb1);
         sp1=(ProgressBar)view.findViewById(R.id.sp1);
         sr1=(RecyclerView)view.findViewById(R.id.sr1);
+        sp1.setVisibility(View.INVISIBLE);
+        sb1.setVisibility(View.INVISIBLE);
 
         scroller=(ScrollView)view.findViewById(R.id.scroller);
         loading_news_sera=(LinearLayout)view.findViewById(R.id.loading_news_sera);
@@ -1089,6 +1091,8 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
 
 
                         loading_news_onno.setVisibility(View.VISIBLE);
+
+                        sb1.setVisibility(View.VISIBLE);
 
                         anno1.setOnClickListener(new View.OnClickListener() {
                             @Override
