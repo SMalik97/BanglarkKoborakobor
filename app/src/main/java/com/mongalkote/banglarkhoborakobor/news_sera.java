@@ -12,12 +12,15 @@ import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,6 +61,9 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
     String postDate[]=new String[20];
     String mapImage;
     String postImage[]=new String[20];
+    Button sb1;
+    RecyclerView sr1;
+    ProgressBar sp1;
 
     //String[] postId;
     int postId[]=new int[20];
@@ -87,6 +93,10 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_news_sera, null);
+        sb1=(Button)view.findViewById(R.id.sb1);
+        sp1=(ProgressBar)view.findViewById(R.id.sp1);
+        sr1=(RecyclerView)view.findViewById(R.id.sr1);
+
         scroller=(ScrollView)view.findViewById(R.id.scroller);
         loading_news_sera=(LinearLayout)view.findViewById(R.id.loading_news_sera);
         loading_news_sera.setVisibility(View.INVISIBLE);
@@ -240,6 +250,18 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
 
         loadNewsSera lns=new loadNewsSera();
         new Thread(lns).start();
+
+
+        //Load more news button click event
+        sb1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sb1.setVisibility(View.INVISIBLE);
+                sp1.setVisibility(View.VISIBLE);
+            }
+        });
+
+
 //.......................................................................
       /*  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             scroller.setOnScrollChangeListener(new View.OnScrollChangeListener() {

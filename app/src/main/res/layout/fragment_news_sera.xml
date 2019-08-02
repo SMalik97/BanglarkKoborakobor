@@ -1615,12 +1615,40 @@
                 </LinearLayout>
             </LinearLayout>
 
-
-
-
-
         </LinearLayout>
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/sb1"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_signup"
+        android:text="Load more news"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:drawableLeft="@drawable/ic_refresh"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:typeface="serif"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+    <ProgressBar
+        android:id="@+id/sp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-55dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sr1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-46dp"/>
+</LinearLayout>
 
         </LinearLayout>
     </ScrollView>
