@@ -55,8 +55,10 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
     Map<String, Object> mapSubtitle;
     String[] postTitle;
     String[] postSubtitle;
+    String postDate[]=new String[20];
     String mapImage;
     String postImage[]=new String[20];
+
     //String[] postId;
     int postId[]=new int[20];
     private TextView newsTitle1,newsTitle2,newsTitle3,newsTitle4,newsTitle5,newsTitle6,newsTitle7,newsTitle8,newsTitle9,newsTitle10,newsTitle11,newsTitle12,newsTitle13,newsTitle14,newsTitle15,newsTitle16,newsTitle17,newsTitle18,newsTitle19,newsTitle20;
@@ -134,13 +136,6 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
         onnodate5=(TextView)view.findViewById(R.id.onnodate5);
 
 
-
-        Date c= Calendar.getInstance().getTime();
-        SimpleDateFormat df=new SimpleDateFormat("dd-MMM-yyyy");
-        d=df.format(c);
-        date1.setText(d);date2.setText(d);date3.setText(d);date4.setText(d);date5.setText(d);date6.setText(d);date7.setText(d);date8.setText(d);
-        date9.setText(d);date10.setText(d);date11.setText(d);date12.setText(d);date13.setText(d);date19.setText(d);date20.setText(d);
-        onnodate1.setText(d);onnodate2.setText(d);onnodate3.setText(d);onnodate4.setText(d);onnodate5.setText(d);
 
         newsImage1=(ImageView)view.findViewById(R.id.newsImage1);
         newsImage2=(ImageView)view.findViewById(R.id.newsImage2);
@@ -291,8 +286,8 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                             mapPost = (Map<String, Object>) list.get(i);
                             int id = ((Double) mapPost.get("id")).intValue();
                             postId[i] = id;
-                            /*String d=(String) mapTitle.get("date");
-                            Toast.makeText(getContext(), d+"", Toast.LENGTH_SHORT).show();*/
+                            String dd=(String) mapPost.get("date");
+                            postDate[i]=dd.substring(0,10);
                             mapTitle = (Map<String, Object>) mapPost.get("title");
                             postTitle[i] = (String) mapTitle.get("rendered").toString();
                             mapSubtitle = (Map<String, Object>) mapPost.get("excerpt");
@@ -323,6 +318,10 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                             newsSubtitle2.setText(postSubtitle[1]);
                             newsSubtitle3.setText(postSubtitle[2]);
                             newsSubtitle4.setText(postSubtitle[3]);
+
+                            date1.setText(postDate[1]);
+                            date2.setText(postDate[2]);
+                            date3.setText(postDate[3]);
 
                             loading_news_sera.setVisibility(View.VISIBLE);
                             loader.hide();
@@ -433,6 +432,8 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                             mapPost = (Map<String, Object>) list.get(i);
                             int id = ((Double) mapPost.get("id")).intValue();
                             postId[i] = id;
+                            String dd=(String) mapPost.get("date");
+                            postDate[i]=dd.substring(0,10);
                             mapTitle = (Map<String, Object>) mapPost.get("title");
                             postTitle[i] = (String) mapTitle.get("rendered");
                             mapSubtitle = (Map<String, Object>) mapPost.get("excerpt");
@@ -462,6 +463,10 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                             newsSubtitle6.setText(postSubtitle[1]);
                             newsSubtitle7.setText(postSubtitle[2]);
                             newsSubtitle8.setText(postSubtitle[3]);
+
+                            date4.setText(postDate[1]);
+                            date5.setText(postDate[2]);
+                            date6.setText(postDate[3]);
 
                             loading_news_police.setVisibility(View.VISIBLE);
 
@@ -580,6 +585,8 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                             mapPost = (Map<String, Object>) list.get(i);
                             int id = ((Double) mapPost.get("id")).intValue();
                             postId[i] = id;
+                            String dd=(String) mapPost.get("date");
+                            postDate[i]=dd.substring(0,10);
                             mapTitle = (Map<String, Object>) mapPost.get("title");
                             postTitle[i] = (String) mapTitle.get("rendered");
                             mapSubtitle = (Map<String, Object>) mapPost.get("excerpt");
@@ -610,6 +617,10 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                             newsSubtitle10.setText(postSubtitle[1]);
                             newsSubtitle11.setText(postSubtitle[2]);
                             newsSubtitle12.setText(postSubtitle[3]);
+
+                            date7.setText(postDate[1]);
+                            date8.setText(postDate[2]);
+                            date9.setText(postDate[3]);
 
                             loading_news_prosason.setVisibility(View.VISIBLE);
 
@@ -723,6 +734,8 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                                 mapPost = (Map<String, Object>) list.get(i);
                                 int id = ((Double) mapPost.get("id")).intValue();
                                 postId[i] = id;
+                                String dd=(String) mapPost.get("date");
+                                postDate[i]=dd.substring(0,10);
                                 mapTitle = (Map<String, Object>) mapPost.get("title");
                                 postTitle[i] = (String) mapTitle.get("rendered");
                                 mapSubtitle = (Map<String, Object>) mapPost.get("excerpt");
@@ -753,6 +766,10 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                                 newsSubtitle14.setText(postSubtitle[1]);
                                 newsSubtitle15.setText(postSubtitle[2]);
                                 newsSubtitle16.setText(postSubtitle[3]);
+
+                                date10.setText(postDate[1]);
+                                date11.setText(postDate[2]);
+                                date12.setText(postDate[3]);
 
                                 loading_news_rajnity.setVisibility(View.VISIBLE);
 
@@ -863,6 +880,8 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                             mapPost = (Map<String, Object>) list.get(i);
                             int id = ((Double) mapPost.get("id")).intValue();
                             postId[i] = id;
+                            String dd=(String) mapPost.get("date");
+                            postDate[i]=dd.substring(0,10);
                             mapTitle = (Map<String, Object>) mapPost.get("title");
                             postTitle[i] = (String) mapTitle.get("rendered");
                             mapSubtitle = (Map<String, Object>) mapPost.get("excerpt");
@@ -893,6 +912,10 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                         newsSubtitle18.setText(postSubtitle[1]);
                         newsSubtitle19.setText(postSubtitle[2]);
                         newsSubtitle20.setText(postSubtitle[3]);
+
+                        date13.setText(postDate[1]);
+                        date19.setText(postDate[2]);
+                        date20.setText(postDate[3]);
 
                         loading_news_loksova.setVisibility(View.VISIBLE);
 
@@ -1005,6 +1028,8 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                             mapPost = (Map<String, Object>) list.get(i);
                             int id = ((Double) mapPost.get("id")).intValue();
                             postId[i] = id;
+                            String dd=(String) mapPost.get("date");
+                            postDate[i]=dd.substring(0,10);
                             mapTitle = (Map<String, Object>) mapPost.get("title");
                             postTitle[i] = (String) mapTitle.get("rendered");
 
@@ -1033,6 +1058,12 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                         onnotitle3.setText(postTitle[2]);
                         onnotitle4.setText(postTitle[3]);
                         onnotitle5.setText(postTitle[4]);
+
+                        onnodate1.setText(postDate[0]);
+                        onnodate2.setText(postDate[1]);
+                        onnodate3.setText(postDate[2]);
+                        onnodate4.setText(postDate[3]);
+                        onnodate5.setText(postDate[4]);
 
 
                         loading_news_onno.setVisibility(View.VISIBLE);

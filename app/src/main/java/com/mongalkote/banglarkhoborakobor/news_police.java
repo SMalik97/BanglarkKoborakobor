@@ -59,6 +59,7 @@ public class news_police extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     String d;
+    String postDate[]=new String[20];
 
 
     public news_police() {
@@ -84,9 +85,7 @@ public class news_police extends Fragment {
         first10news f10n=new first10news();
         new Thread(f10n).start();
 
-        Date c= Calendar.getInstance().getTime();
-        SimpleDateFormat df=new SimpleDateFormat("dd-MMM-yyyy");
-        d=df.format(c);
+
 
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView);
         layoutManager=new LinearLayoutManager(getContext());
@@ -120,8 +119,8 @@ public class news_police extends Fragment {
                             mapPost = (Map<String, Object>) list.get(i);
                             int id = ((Double) mapPost.get("id")).intValue();
                             postId[i] = id;
-                            /*String d=(String) mapTitle.get("date");
-                            Toast.makeText(getContext(), d+"", Toast.LENGTH_SHORT).show();*/
+                            String dd=(String) mapPost.get("date");
+                            postDate[i]=dd.substring(0,10);
                             mapTitle = (Map<String, Object>) mapPost.get("title");
                             postTitle[i] = (String) mapTitle.get("rendered").toString();
                             mapSubtitle = (Map<String, Object>) mapPost.get("excerpt");
@@ -209,7 +208,7 @@ public class news_police extends Fragment {
             viewHolder.ntitle.setText(postTitle[i+1]);
             viewHolder.nstitle.setText(postSubtitle[i+1]);
             Glide.with(viewHolder.nimg.getContext()).load(postImage[i+1]).crossFade().into(viewHolder.nimg);
-            viewHolder.ndate3.setText(d);
+            viewHolder.ndate3.setText(postDate[i+1]);
 
 
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -230,7 +229,7 @@ public class news_police extends Fragment {
 
         @Override
         public int getItemCount() {
-            return 14;
+            return list.size()-1;
         }//return size of array
 
         public class ViewHolder extends RecyclerView.ViewHolder{

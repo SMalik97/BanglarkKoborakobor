@@ -62,6 +62,7 @@ public class news_biggapon extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     String d;
+    String postDate[]=new String[20];
 
 
     public news_biggapon() {
@@ -86,9 +87,6 @@ public class news_biggapon extends Fragment {
         first10news f10n=new first10news();
         new Thread(f10n).start();
 
-        Date c= Calendar.getInstance().getTime();
-        SimpleDateFormat df=new SimpleDateFormat("dd-MMM-yyyy");
-        d=df.format(c);
 
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView);
         layoutManager=new LinearLayoutManager(getContext());
@@ -122,8 +120,8 @@ public class news_biggapon extends Fragment {
                             mapPost = (Map<String, Object>) list.get(i);
                             int id = ((Double) mapPost.get("id")).intValue();
                             postId[i] = id;
-                            /*String d=(String) mapTitle.get("date");
-                            Toast.makeText(getContext(), d+"", Toast.LENGTH_SHORT).show();*/
+                            String dd=(String) mapPost.get("date");
+                            postDate[i]=dd.substring(0,10);
                             mapTitle = (Map<String, Object>) mapPost.get("title");
                             postTitle[i] = (String) mapTitle.get("rendered").toString();
                             mapSubtitle = (Map<String, Object>) mapPost.get("excerpt");
