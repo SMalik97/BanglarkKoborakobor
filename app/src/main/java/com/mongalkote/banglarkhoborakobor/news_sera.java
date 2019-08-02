@@ -405,7 +405,7 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                             loadNewsploice lnp = new loadNewsploice();
                             new Thread(lnp).start();
                         }catch (Exception e){
-                           // Toast.makeText(getContext(), "Json parsing error", Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(getContext(),"Json parsing error", Toast.LENGTH_SHORT).show();
                             run();
                         }
 
