@@ -260,6 +260,10 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
             public void onClick(View view) {
                 sb1.setVisibility(View.INVISIBLE);
                 sp1.setVisibility(View.VISIBLE);
+                loadannoseraextra ll=new loadannoseraextra();
+                new Thread(ll).start();
+
+
             }
         });
 
@@ -392,7 +396,151 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
                                 public void onClick(View view) {
                                     Intent i=new Intent(getContext(),Post.class);
                                     i.putExtra("id",id4);
-                                    i.putExtra("cat","sera");
+                             class loadannoNews implements Runnable{
+        @Override
+        public void run() {
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, url6, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        gson = new Gson();
+                        JsonReader reader = new JsonReader(new StringReader(url4));
+                        reader.setLenient(true);
+                        list = (List) gson.fromJson(response, List.class);
+                        postTitle = new String[list.size()];
+                        postSubtitle = new String[list.size()];
+                        for (int i = 0; i < list.size(); i++) {
+                            JsonReader reader2 = new JsonReader(new StringReader(url4));
+                            reader2.setLenient(true);
+                            mapPost = (Map<String, Object>) list.get(i);
+                            int id = ((Double) mapPost.get("id")).intValue();
+                            postId[i] = id;
+                            String dd=(String) mapPost.get("date");
+                            postDate[i]=dd.substring(0,10);
+                            mapTitle = (Map<String, Object>) mapPost.get("title");
+                            postTitle[i] = (String) mapTitle.get("rendered");
+
+                            mapImage = (String) mapPost.get("jetpack_featured_media_url");
+                            if (mapImage.equals("")) {
+                                postImage[i] = "https://i1.wp.com/mongalkote.com/wp-content/uploads/2018/12/IMG-20181224-WA0015.jpg?resize=768%2C294&ssl=1";
+                            } else {
+                                postImage[i] = mapImage;
+                            }
+                        }
+
+                        final String id21=String.valueOf(postId[0]);
+                        final String id22=String.valueOf(postId[1]);
+                        final String id23=String.valueOf(postId[2]);
+                        final String id24=String.valueOf(postId[3]);
+                        final String id25=String.valueOf(postId[4]);
+
+                        Glide.with(getContext()).load(postImage[0]).crossFade().into(onnoimg1);
+                        Glide.with(getContext()).load(postImage[1]).crossFade().into(onnoimg2);
+                        Glide.with(getContext()).load(postImage[2]).crossFade().into(onnoimg3);
+                        Glide.with(getContext()).load(postImage[3]).crossFade().into(onnoimg4);
+                        Glide.with(getContext()).load(postImage[4]).crossFade().into(onnoimg5);
+
+                        onnotitle1.setText(postTitle[0]);
+                        onnotitle2.setText(postTitle[1]);
+                        onnotitle3.setText(postTitle[2]);
+                        onnotitle4.setText(postTitle[3]);
+                        onnotitle5.setText(postTitle[4]);
+
+                        onnodate1.setText(postDate[0]);
+                        onnodate2.setText(postDate[1]);
+                        onnodate3.setText(postDate[2]);
+                        onnodate4.setText(postDate[3]);
+                        onnodate5.setText(postDate[4]);
+
+
+                        loading_news_onno.setVisibility(View.VISIBLE);
+
+                        sb1.setVisibility(View.VISIBLE);
+
+                        anno1.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id21);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+                        anno2.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id22);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+                        anno3.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id23);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+                        anno4.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id24);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+                        anno5.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent i=new Intent(getContext(),Post.class);
+                                i.putExtra("id",id25);
+                                i.putExtra("cat","onno");
+                                startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                            }
+                        });
+
+
+                    }catch (Exception e){
+                        //Toast.makeText(getContext(), "Json parsing error", Toast.LENGTH_SHORT).show();
+                        run();
+                    }
+
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    if (trying4!=4){
+                        Toast.makeText(getContext(), "Slow network connection!", Toast.LENGTH_SHORT).show();
+                        run();
+                        trying4=trying4+1;
+                    }else {
+                        Toast.makeText(getContext(), "Slow network connection, Please refresh the page!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+            try {
+                RequestQueue rQueue = Volley.newRequestQueue(getContext());
+                rQueue.add(stringRequest);
+            }catch (Exception e){
+
+            }
+        }
+        }       i.putExtra("cat","sera");
                                     startActivity(i);
                                     getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
                                 }
@@ -1092,7 +1240,7 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
 
                         loading_news_onno.setVisibility(View.VISIBLE);
 
-                        sb1.setVisibility(View.VISIBLE);
+                       // sb1.setVisibility(View.VISIBLE);
 
                         anno1.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -1178,6 +1326,137 @@ LinearLayout loading_news_sera,loading_news_police,loading_news_prosason,loading
             }
         }
         }
+
+    class loadannoseraextra implements Runnable{
+        @Override
+        public void run() {
+            final String url7 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=67&per_page=15";
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, url7, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        gson = new Gson();
+                        JsonReader reader = new JsonReader(new StringReader(url7));
+                        reader.setLenient(true);
+                        list = (List) gson.fromJson(response, List.class);
+                        postTitle = new String[list.size()];
+                        postSubtitle = new String[list.size()];
+                        for (int i = 0; i < list.size(); i++) {
+                            JsonReader reader2 = new JsonReader(new StringReader(url7));
+                            reader2.setLenient(true);
+                            mapPost = (Map<String, Object>) list.get(i);
+                            int id = ((Double) mapPost.get("id")).intValue();
+                            postId[i] = id;
+                            String dd=(String) mapPost.get("date");
+                            postDate[i]=dd.substring(0,10);
+                            mapTitle = (Map<String, Object>) mapPost.get("title");
+                            postTitle[i] = (String) mapTitle.get("rendered");
+                            mapSubtitle = (Map<String, Object>) mapPost.get("excerpt");
+                            postSubtitle[i] = (String) mapSubtitle.get("rendered");
+
+                            mapImage = (String) mapPost.get("jetpack_featured_media_url");
+                            if (mapImage.equals("")) {
+                                postImage[i] = "https://i1.wp.com/mongalkote.com/wp-content/uploads/2018/12/IMG-20181224-WA0015.jpg?resize=768%2C294&ssl=1";
+                            } else {
+                                postImage[i] = mapImage;
+                            }
+                        }
+
+                        DataAdapter adpt=new DataAdapter(postTitle,postSubtitle,postImage);
+                        sr1.setAdapter(adpt);
+
+                    }catch (Exception e){
+                        Toast.makeText(getContext(), "Json parsing error", Toast.LENGTH_SHORT).show();
+                        run();
+                    }
+
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    if (trying4!=4){
+                        Toast.makeText(getContext(), "Slow network connection!", Toast.LENGTH_SHORT).show();
+                        run();
+                        trying4=trying4+1;
+                    }else {
+                        Toast.makeText(getContext(), "Slow network connection, Please refresh the page!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+            try {
+                RequestQueue rQueue = Volley.newRequestQueue(getContext());
+                rQueue.add(stringRequest);
+            }catch (Exception e){
+
+            }
+        }
+    }
+
+
+    public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
+        private String[] postTitle;
+        private String[] postSubtitle;
+        private String[] postImage;
+
+        public DataAdapter(String[] postTitle,String[] postSubtitle,String[] postImage) {
+            this.postTitle = postTitle ;
+            this.postSubtitle = postSubtitle ;
+            this.postImage=postImage;
+        }
+
+        @Override
+        public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.news_list, viewGroup, false);
+
+            return new ViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(ViewHolder viewHolder, final int i) {
+
+            viewHolder.ntitle.setText(postTitle[i]);
+            viewHolder.nstitle.setText(postSubtitle[i]);
+            Glide.with(viewHolder.nimg.getContext()).load(postImage[i]).crossFade().into(viewHolder.nimg);
+            viewHolder.ndate3.setText(postDate[i]);
+
+
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int j=i+1;
+                    Intent i=new Intent(getContext(),Post.class);
+                    i.putExtra("id",postId[j]+"");
+                    i.putExtra("cat","sera");
+                    startActivity(i);
+                    getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                }
+            });
+
+        }
+        @Override
+        public int getItemCount() {
+            return list.size();
+        }//return size of array
+
+        public class ViewHolder extends RecyclerView.ViewHolder{
+            private TextView ntitle,nstitle,ndate3;
+            private ImageView nimg;
+            public ViewHolder(View view) {
+                super(view);
+
+                ntitle = (TextView)view.findViewById(R.id.newsTitle3);
+                nstitle = (TextView)view.findViewById(R.id.newsSubtitle3);
+                nimg=(ImageView)view.findViewById(R.id.newsImage3);
+                ndate3=(TextView)view.findViewById(R.id.ndate3);
+            }
+        }
+
+    }
+
+
+
     }
 
 

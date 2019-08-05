@@ -1573,7 +1573,11 @@
                 </LinearLayout>
             </LinearLayout>
 
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sr1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-46dp"/>
             <LinearLayout
                 android:id="@+id/anno5"
                 android:layout_width="match_parent"
@@ -1643,11 +1647,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-55dp"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sr1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-46dp"/>
+
 </LinearLayout>
 
         </LinearLayout>
