@@ -48,10 +48,10 @@ public class news_police extends Fragment {
     String[] postTitle;
     String[] postSubtitle;
     String mapImage;
-    String postImage[]=new String[20];
-    int postId[]=new int[20];
-    String url1="https://www.mongalkote.com/wp-json/wp/v2/posts?categories=64&per_page=15";
-    String url2="https://www.mongalkote.com/wp-json/wp/v2/posts?categories=64&per_page=20";
+    String postImage[]=new String[100];
+    int postId[]=new int[100];
+    String url1="https://www.mongalkote.com/wp-json/wp/v2/posts?categories=64&per_page=40";
+    String url2="https://www.mongalkote.com/wp-json/wp/v2/posts?categories=64&per_page=40";
     int trying=0;
     CardView card1;
     ImageView newsImage1;
@@ -60,7 +60,8 @@ public class news_police extends Fragment {
     RecyclerView recyclerView,recyclerView2;
     RecyclerView.LayoutManager layoutManager;
     String d;
-    String postDate[]=new String[20];
+    String postDate[]=new String[100];
+
 
 
     public news_police() {
@@ -82,6 +83,10 @@ public class news_police extends Fragment {
         //start loading news.....................................
         loader = (AVLoadingIndicatorView)view.findViewById(R.id.dotload);
         loader.show();
+
+        postTitle = new String[100];
+        postSubtitle = new String[100];
+
 //load first 15 news
         first10news f10n=new first10news();
         new Thread(f10n).start();
@@ -89,7 +94,6 @@ public class news_police extends Fragment {
 
 
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView);
-        recyclerView2=(RecyclerView)view.findViewById(R.id.recyclerView2);
         layoutManager=new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
@@ -113,9 +117,8 @@ public class news_police extends Fragment {
                         JsonReader reader = new JsonReader(new StringReader(url1));
                         reader.setLenient(true);
                         list = (List) gson.fromJson(response, List.class);
-                        postTitle = new String[list.size()];
-                        postSubtitle = new String[list.size()];
-                        for (int i = 0; i < list.size(); i++) {
+
+                        for (int i = 0; i < 20; i++) {
                             JsonReader reader2 = new JsonReader(new StringReader(url1));
                             reader2.setLenient(true);
                             mapPost = (Map<String, Object>) list.get(i);
@@ -233,7 +236,7 @@ public class news_police extends Fragment {
 
         @Override
         public int getItemCount() {
-            return list.size()-1;
+            return 19;
         }//return size of array
 
         public class ViewHolder extends RecyclerView.ViewHolder{
@@ -266,9 +269,8 @@ public class news_police extends Fragment {
                         JsonReader reader = new JsonReader(new StringReader(url2));
                         reader.setLenient(true);
                         list = (List) gson.fromJson(response, List.class);
-                        postTitle = new String[list.size()];
-                        postSubtitle = new String[list.size()];
-                        for (int i = 15; i < list.size()+15; i++) {
+
+                        for (int i = 20; i < 40; i++) {
                             JsonReader reader2 = new JsonReader(new StringReader(url2));
                             reader2.setLenient(true);
                             mapPost = (Map<String, Object>) list.get(i);
@@ -291,11 +293,12 @@ public class news_police extends Fragment {
 
                         DataAdapter2 adpt=new DataAdapter2(postTitle,postSubtitle,postImage);
                         recyclerView.setAdapter(adpt);
-                        loader.hide();
+
+
 
 
                     }catch (Exception e){
-                        // Toast.makeText(getContext(), "Json parsing error", Toast.LENGTH_SHORT).show();
+                         //Toast.makeText(getContext(), "Json parsing error", Toast.LENGTH_SHORT).show();
                         run();
                     }
 
@@ -345,16 +348,16 @@ public class news_police extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder viewHolder, final int i) {
 
-            viewHolder.ntitle.setText(postTitle[i+14]);
-            viewHolder.nstitle.setText(postSubtitle[i+14]);
-            Glide.with(viewHolder.nimg.getContext()).load(postImage[i+14]).crossFade().into(viewHolder.nimg);
-            viewHolder.ndate3.setText(postDate[i+14]);
+            viewHolder.ntitle.setText(postTitle[i+1]);
+            viewHolder.nstitle.setText(postSubtitle[i+1]);
+            Glide.with(viewHolder.nimg.getContext()).load(postImage[i+1]).crossFade().into(viewHolder.nimg);
+            viewHolder.ndate3.setText(postDate[i+1]);
 
 
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int j=i+14;
+                    int j=i+1;
                     Intent i=new Intent(getContext(),Post.class);
                     i.putExtra("id",postId[j]+"");
                     i.putExtra("cat","police");
@@ -362,12 +365,11 @@ public class news_police extends Fragment {
                     getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
                 }
             });
-
         }
 
         @Override
         public int getItemCount() {
-            return 20;
+            return 39;
         }//return size of array
 
         public class ViewHolder extends RecyclerView.ViewHolder{
@@ -384,6 +386,10 @@ public class news_police extends Fragment {
         }
 
     }
+
+
+
+
 
 
 

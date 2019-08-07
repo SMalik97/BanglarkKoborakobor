@@ -48,7 +48,8 @@ public class news_loksova extends Fragment {
     String mapImage;
     String postImage[] = new String[20];
     int postId[] = new int[20];
-    String url1 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=69&per_page=15";
+    String url1 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=69&per_page=40";
+    String url2 = "https://www.mongalkote.com/wp-json/wp/v2/posts?categories=69&per_page=40";
     int trying = 0;
     CardView card1;
     ImageView newsImage1;
@@ -108,7 +109,7 @@ public class news_loksova extends Fragment {
                         list = (List) gson.fromJson(response, List.class);
                         postTitle = new String[list.size()];
                         postSubtitle = new String[list.size()];
-                        for (int i = 0; i < list.size(); i++) {
+                        for (int i = 0; i < 20; i++) {
                             JsonReader reader2 = new JsonReader(new StringReader(url1));
                             reader2.setLenient(true);
                             mapPost = (Map<String, Object>) list.get(i);
@@ -146,6 +147,9 @@ public class news_loksova extends Fragment {
                         DataAdapter adpt = new DataAdapter(postTitle, postSubtitle, postImage);
                         recyclerView.setAdapter(adpt);
                         loader.hide();
+
+                        loadnext20news ln20=new loadnext20news();
+                        new Thread(ln20).start();
 
 
                     } catch (Exception e) {
@@ -202,7 +206,7 @@ public class news_loksova extends Fragment {
             viewHolder.ntitle.setText(postTitle[i + 1]);
             viewHolder.nstitle.setText(postSubtitle[i + 1]);
             Glide.with(viewHolder.nimg.getContext()).load(postImage[i + 1]).crossFade().into(viewHolder.nimg);
-            viewHolder.ndate3.setText(postDate[i+1]);
+            viewHolder.ndate3.setText(postDate[i + 1]);
 
 
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -222,7 +226,7 @@ public class news_loksova extends Fragment {
 
         @Override
         public int getItemCount() {
-            return list.size()-1;
+            return 19;
         }//return size of array
 
         public class ViewHolder extends RecyclerView.ViewHolder {
@@ -240,4 +244,140 @@ public class news_loksova extends Fragment {
         }
 
     }
+
+        class loadnext20news implements Runnable{
+            @Override
+            public void run() {
+                StringRequest stringRequest = new StringRequest(Request.Method.GET, url2, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            gson = new Gson();
+                            JsonReader reader = new JsonReader(new StringReader(url2));
+                            reader.setLenient(true);
+                            list = (List) gson.fromJson(response, List.class);
+
+                            for (int i = 20; i < 40; i++) {
+                                JsonReader reader2 = new JsonReader(new StringReader(url2));
+                                reader2.setLenient(true);
+                                mapPost = (Map<String, Object>) list.get(i);
+                                int id = ((Double) mapPost.get("id")).intValue();
+                                postId[i] = id;
+                                String dd=(String) mapPost.get("date");
+                                postDate[i]=dd.substring(0,10);
+                                mapTitle = (Map<String, Object>) mapPost.get("title");
+                                postTitle[i] = (String) mapTitle.get("rendered").toString();
+                                mapSubtitle = (Map<String, Object>) mapPost.get("excerpt");
+                                postSubtitle[i] = (String) mapTitle.get("rendered").toString();
+                                mapImage = (String) mapPost.get("jetpack_featured_media_url");
+                                if (mapImage.equals("")) {
+                                    postImage[i] = "https://i1.wp.com/mongalkote.com/wp-content/uploads/2018/12/IMG-20181224-WA0015.jpg?resize=768%2C294&ssl=1";
+                                } else {
+                                    postImage[i] = mapImage;
+                                }
+                            }
+
+
+                            DataAdapter2 adpt=new DataAdapter2(postTitle,postSubtitle,postImage);
+                            recyclerView.setAdapter(adpt);
+
+
+
+
+                        }catch (Exception e){
+                           // Toast.makeText(getContext(), "Json parsing error", Toast.LENGTH_SHORT).show();
+                            run();
+                        }
+
+
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        if (trying!=4){
+                            Toast.makeText(getContext(), "Slow network connection!", Toast.LENGTH_SHORT).show();
+                            run();
+                            trying=trying+1;
+                        }else {
+                            Toast.makeText(getContext(), "Slow network connection, Please refresh the page!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                try {
+                    RequestQueue rQueue = Volley.newRequestQueue(getContext());
+                    rQueue.add(stringRequest);
+                }catch (Exception e){
+
+                }
+
+            }
+        }
+
+        public class DataAdapter2 extends RecyclerView.Adapter<DataAdapter2.ViewHolder> {
+            private String[] postTitle;
+            private String[] postSubtitle;
+            private String[] postImage;
+
+            public DataAdapter2(String[] postTitle,String[] postSubtitle,String[] postImage) {
+                this.postTitle = postTitle ;
+                this.postSubtitle = postSubtitle ;
+                this.postImage=postImage;
+            }
+
+            @Override
+            public DataAdapter2.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.news_list, viewGroup, false);
+
+                return new DataAdapter2.ViewHolder(view);
+            }
+
+            @Override
+            public void onBindViewHolder(DataAdapter2.ViewHolder viewHolder, final int i) {
+
+                viewHolder.ntitle.setText(postTitle[i+1]);
+                viewHolder.nstitle.setText(postSubtitle[i+1]);
+                Glide.with(viewHolder.nimg.getContext()).load(postImage[i+1]).crossFade().into(viewHolder.nimg);
+                viewHolder.ndate3.setText(postDate[i+1]);
+
+
+                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int j=i+1;
+                        Intent i=new Intent(getContext(),Post.class);
+                        i.putExtra("id",postId[j]+"");
+                        i.putExtra("cat","police");
+                        startActivity(i);
+                        getActivity().overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                    }
+                });
+            }
+
+            @Override
+            public int getItemCount() {
+                return 39;
+            }//return size of array
+
+            public class ViewHolder extends RecyclerView.ViewHolder{
+                private TextView ntitle,nstitle,ndate3;
+                private ImageView nimg;
+                public ViewHolder(View view) {
+                    super(view);
+
+                    ntitle = (TextView)view.findViewById(R.id.newsTitle3);
+                    nstitle = (TextView)view.findViewById(R.id.newsSubtitle3);
+                    nimg=(ImageView)view.findViewById(R.id.newsImage3);
+                    ndate3=(TextView)view.findViewById(R.id.ndate3);
+                }
+            }
+
+        }
+
+
+
+
+
+
+
 }

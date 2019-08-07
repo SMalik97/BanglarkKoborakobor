@@ -6,68 +6,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".news_police"
     android:background="#e7e3ef">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:scrollbars="none">
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="5dp">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card1"
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:id="@+id/n1"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="200dp">
 
-                <ImageView
-                    android:id="@+id/newsImage1"
+                <LinearLayout
+                    android:id="@+id/n1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/news1" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/newsTitle1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="-60dp"
-                    android:background="@color/text_background"
-                    android:gravity="center"
-                    android:maxLines="2"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="News Title Will Shown Here"
-                    android:textColor="#ffffff"
-                    android:textSize="24dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:id="@+id/newsImage1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/news1" />
+
+                    <TextView
+                        android:id="@+id/newsTitle1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="-60dp"
+                        android:background="@color/text_background"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="News Title Will Shown Here"
+                        android:textColor="#ffffff"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:nestedScrollingEnabled="false"
+                />
 
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"/>
-
-
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/dotload"
         android:layout_width="80dp"

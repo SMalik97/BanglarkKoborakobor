@@ -245,7 +245,7 @@ public class Home extends AppCompatActivity
             openInCustomTab(u);
             overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
         }else if (id == R.id.nav_mongalkote) {
-            String u="https://katwapresscorner.blogspot.com";
+            String u="https://mongalkote.blogspot.com";
             openInCustomTab(u);
             overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
         }else if (id == R.id.nav_bk) {
